@@ -1,5 +1,5 @@
-import { messageFailed } from '../utils/showMessage';
-import { Session } from '../utils/storage';
+import { messageFailed } from '../../utils/showMessage';
+import { Session } from '../../utils/storage';
 
 /*
 

@@ -1,8 +1,8 @@
 import { AxiosError } from 'axios';
 import { ResponseDataType } from '../types/index';
 import { messageFailed } from '../utils/showMessage';
-import forbidden from './forbidden';
-import refreshToken from './refreshToken';
+import forbidden from './hooks/forbidden';
+import refreshToken from './hooks/refreshToken';
 
 export default (error: AxiosError<ResponseDataType>) => {
   const statusCode = error.response?.status;

@@ -1,9 +1,9 @@
 import { AxiosError } from 'axios';
-import { ResponseDataType } from '../types';
-import { Session } from '../utils/storage';
-import ApiInstance from '../api';
-import { messageFailed } from '../utils/showMessage';
-import { UserAuthApi } from '../api/auth';
+import { ResponseDataType } from '../../types';
+import { Session } from '../../utils/storage';
+import ApiInstance from '../../api';
+import { messageFailed } from '../../utils/showMessage';
+import { UserAuthApi } from '../../api/auth';
 
 const MAX_ERROR_COUNT = 5;
 let currentCount = 0;
