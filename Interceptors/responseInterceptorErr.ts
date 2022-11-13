@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 import { ResponseDataType } from '../types/index';
 import { messageFailed } from '../utils/showMessage';
+import refreshToken from './refreshToken';
 
 export default (error: AxiosError<ResponseDataType>) => {
   const statusCode = error.response?.status;
@@ -11,8 +12,7 @@ export default (error: AxiosError<ResponseDataType>) => {
     case 401:
       messageFailed('身份过期，请重新登录');
       // 一些操作，例如：刷新令牌，如令牌刷新失败时退出到登录页面
-      // todo refreshTokenFn
-      return Promise.reject(error);
+      return refreshToken(error);
     case 403:
       messageFailed('拒绝访问');
       return Promise.reject(error);
