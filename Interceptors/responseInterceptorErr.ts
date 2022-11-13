@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 import { ResponseDataType } from '../types/index';
 import { messageFailed } from '../utils/showMessage';
+import forbidden from './forbidden';
 import refreshToken from './refreshToken';
 
 export default (error: AxiosError<ResponseDataType>) => {
@@ -14,8 +15,7 @@ export default (error: AxiosError<ResponseDataType>) => {
       // 一些操作，例如：刷新令牌，如令牌刷新失败时退出到登录页面
       return refreshToken(error);
     case 403:
-      messageFailed('拒绝访问');
-      return Promise.reject(error);
+      return forbidden();
     case 404:
       messageFailed('请求出错');
       return Promise.reject(error);
