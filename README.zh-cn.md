@@ -1,4 +1,8 @@
-### 📦 axios通用封装方案
+## 📦 axios通用封装方案
+
+### 语言
+[English](https://github.com/QC2168/axios-bz) | [中文](https://github.com/QC2168/axios-bz/blob/main/README.zh-cn.md)
+
 
 ### 功能
 - 🌊 token无感刷新
@@ -13,7 +17,10 @@
 ### API放哪里？
 项目中的`api`文件夹中存放着所有`api`的管理，您可以按照项目使用`namespace`进行划分模块，解决函数命名冲突问题。
 
-####  Demo
+###  例子
+
+#### Api
+
 ```typescript
 import ApiInstance from '@/network'
 
@@ -37,7 +44,7 @@ export namespace UserAuthApi {
 }
 
 ```
-业务代码中使用，例如在`vue3.x`框架中使用。
+#### script
 
 ```vue
 <script setup lang="ts">
