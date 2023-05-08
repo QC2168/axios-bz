@@ -1,14 +1,14 @@
 // 引入axios以及一些类型
 import axios, {
-  AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse,
+  AxiosInstance, AxiosRequestConfig, AxiosResponse,
 } from 'axios';
 import { ResponseDataType } from './types';
 
 export interface Interceptor {
   requestInterceptor: (res: AxiosRequestConfig) => AxiosRequestConfig;
-  requestInterceptorErr?: (res: AxiosError) => any;
+  requestInterceptorErr?: (error: any) => any
   responseInterceptor: (res: AxiosResponse) => AxiosResponse;
-  responseInterceptorErr?: (error: AxiosError) => any;
+  responseInterceptorErr?: (error: any) => any
 }
 
 export interface ApiType {
