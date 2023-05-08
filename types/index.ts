@@ -1,5 +1,5 @@
-export interface ResponseDataType<Data = any> {
-  data: Data;
+export interface ResponseDataType<T = unknown> {
+  data: T;
   msg: string;
   status: number;
 }
