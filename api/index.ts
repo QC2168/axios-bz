@@ -1,4 +1,4 @@
-import Api, { ApiType } from '../request';
+import Api, { ApiType } from '..';
 import {
   responseInterceptor,
   requestInterceptorErr,
