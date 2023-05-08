@@ -65,3 +65,37 @@ const login = async () => {
 </script>
 ```
 
+### More
+
+### Interceptors
+
+#### requestInterceptor
+
+If you want to change the request parameters or some options before the request, you can do so in `Interceptors/requestInterceptor`
+
+#### requestInterceptorErr
+
+If the request fails, the `Interceptors/requestInterceptorErr` method will be executed
+
+
+#### responseInterceptor
+
+If you want to process the response data as soon as possible, such as snake case to camelcase, you can process it in `Interceptors/responseInterceptor`
+
+#### responseInterceptorErr
+
+If the response fails, the `Interceptors/responseInterceptorErr` method will be executed, where you can handle it according to business requirements
+
+### ResponseResultType
+
+#### Default
+
+```typescript
+export interface ResponseDataType<T = any> {
+  data: T;
+  msg: string;
+  status: number;
+}
+```
+
+If there is a difference between the backend response and the response, it is necessary to change the `ResponseDataType` in `types/common/index`
