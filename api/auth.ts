@@ -1,4 +1,5 @@
-import ApiInstance from './index';
+import { alovaInstance } from '.';
+import { ResponseDataType } from '../types';
 
 export namespace UserAuthApi {
   export interface RefreshResultType {
@@ -7,11 +8,7 @@ export namespace UserAuthApi {
   }
 
   // 刷新令牌
-  export const refreshToken = (refresh: string) => ApiInstance.request<RefreshResultType>({
-    url: '/token/refresh',
-    method: 'post',
-    data: {
-      refresh,
-    },
+  export const refreshToken = (refresh: string) => alovaInstance.Post<ResponseDataType<RefreshResultType>>('/token/refresh', {
+    refresh
   });
 }
