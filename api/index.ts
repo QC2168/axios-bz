@@ -7,6 +7,8 @@ import VueHook from 'alova/vue';
 export const alovaInstance = createAlova({
   baseURL: 'https://api.alovajs.dev',
   timeout: 1000 * 10,
+  // 关闭缓存
+  cacheFor: null,
   requestAdapter: xhrRequestAdapter(),
   statesHook: VueHook,
   beforeRequest(method) {
@@ -34,5 +36,10 @@ export const alovaInstance = createAlova({
     },
   },
 });
+
+
+export const request=()=>{
+
+}
 
 export default alovaInstance
